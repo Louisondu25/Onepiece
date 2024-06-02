@@ -1,4 +1,4 @@
-import { charOnepieceApi, } from "../Onepiece/Api.ts";
+import { charOnepieceApi } from "../Onepiece/Api.ts";
 
 // Définition de la classe ContentCard
 export class ContentOPCard {

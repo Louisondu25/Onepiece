@@ -12,10 +12,10 @@ export class Displayinterface {
       // Création des différents éléments de l'interface
 
       // Création d'une carte
-      const Card = Card.basic("card");
+      const theCard = Card.basic("card");
 
       // Création d'une ImageCard avec l'image du personnage et une classe CSS
-      const ImageCard = ImageCard.basic(character.image, "image-card");
+      const thisImageCard = ImageCard.basic(character.image, "image-card");
 
       // Création d'une ContentCard avec les informations du personnage
       const contentCard = ContentCard.OPContent(

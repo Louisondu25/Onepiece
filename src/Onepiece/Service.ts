@@ -24,43 +24,39 @@ export class OPService {
       // Relance l'erreur pour qu'elle soit gérée par le appelant
       throw error;
     }
-  }
-};
-
-static charOnepieceApiToCharList = (char: charOnepieceApi): charList => {
-  return {
-    id: char.id ?? "",
-    name: char.name ?? "",
-    size: char.size ?? "",
-    age: char.age ?? "",
-    bounty: char.bounty ?? "",
-    crew: {
-      id: char.crew?.id ?? "",
-      name: char.crew?.name ?? "",
-      description: char.crew?.description ?? null,
-      status: char.crew?.status ?? "",
-      number: char.crew?.number ?? "",
-      roman_name: char.crew?.roman_name ?? "",
-      total_prime: char.crew?.total_prime ?? "",
-      is_yonko: char.crew?.is_yonko ?? false,
-    },
-    fruit: {
-      id: char.fruit?.id ?? "",
-      name: char.fruit?.name ?? "",
-      description: char.fruit?.description ?? "",
-      type: char.fruit?.type ?? "",
-      filename: char.fruit?.filename ?? "",
-      roman_name: char.fruit?.roman_name ?? "",
-      technicalFile: char.fruit?.technicalFile ?? "",
-    },
-    job: char.job ?? "",
-    status: char.status ?? "",
   };
-}
+  static charOnepieceApiToCharList = (char: charOnepieceApi): charList => {
+    return {
+      id: char.id ?? "",
+      name: char.name ?? "",
+      size: char.size ?? "",
+      age: char.age ?? "",
+      bounty: char.bounty ?? "",
+      crew: {
+        id: char.crew?.id ?? "",
+        name: char.crew?.name ?? "",
+        description: char.crew?.description ?? null,
+        status: char.crew?.status ?? "",
+        number: char.crew?.number ?? "",
+        roman_name: char.crew?.roman_name ?? "",
+        total_prime: char.crew?.total_prime ?? "",
+        is_yonko: char.crew?.is_yonko ?? false,
+      },
+      fruit: {
+        id: char.fruit?.id ?? "",
+        name: char.fruit?.name ?? "",
+        description: char.fruit?.description ?? "",
+        type: char.fruit?.type ?? "",
+        filename: char.fruit?.filename ?? "",
+        roman_name: char.fruit?.roman_name ?? "",
+        technicalFile: char.fruit?.technicalFile ?? "",
+      },
+      job: char.job ?? "",
+      status: char.status ?? "",
+    };
+  };
 
-
-  static Apitocharlist = (
-    listchar: charList[]
-  ): OPDto[] => {
+  static Apitocharlist = (listchar: charList[]): OPDto[] => {
     return listchar.map((character) => OPDto.basic(character));
   };
+};
