@@ -12,14 +12,13 @@ export class Displayinterface {
       // Création des différents éléments de l'interface
 
       // Création d'une carte
-      const card = Card.basic("card");
+      const Card = Card.basic("card");
 
       // Création d'une ImageCard avec l'image du personnage et une classe CSS
-      const imgCard = ImageCard.basic(character.image, "image-card");
+      const ImageCard = ImageCard.basic(character.image, "image-card");
 
       // Création d'une ContentCard avec les informations du personnage
       const contentCard = ContentCard.OPContent(
-(
   characters.id;
   characters.name
   characters.size
@@ -46,4 +45,15 @@ export class Displayinterface {
   };
   characters.job
   characters.status
-});
+    );
+
+     // Ajout de l'image dans la carte
+      card.addElement(ImageCard);
+
+      // Ajout de la ContentCard dans la carte
+      card.addElement(Card);
+
+      // Ajout de la carte dans le conteneur
+      card.addCardInContainer();
+    };
+  }
